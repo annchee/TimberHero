@@ -1,0 +1,84 @@
+D .
+D comp
+P 316AD948 btn_close.png
+P 5B258D17 button.png
+P 3C493DD4 check_circle.png
+P 98E54F0D checkbox.png
+P 6B7AB858 clip_num.png
+P 63A22FAC clip_tree_arrow.png
+P D749C312 clip_tree_folder.png
+P 8E9C8386 colorPicker.png
+P 704C5D70 combobox.png
+P D566AE8B fontClip.png
+P 38AB8F3F fontClip_num.png
+P 6EF336AE hscroll$bar.png
+P 7FF47AC5 hscroll$down.png
+P 3D7B147A hscroll$up.png
+P 750BD445 hscroll.png
+P 9A5EF899 hslider$bar.png
+P 9CED7132 hslider.png
+P BA2A0579 html.png
+P 8236CD48 image.png
+P 4ACB7AEF img_bg.png
+P FCD04607 img_bg2.png
+P 23FB4D29 img_bg3.png
+P 5FD17798 img_bg4.png
+P 2BE22124 img_bg5.png
+P BA28BD65 img_blank.png
+P BA2A0579 label.png
+P B017E53E progress$bar.png
+P C05839CD progress.png
+P 3C493DD4 radio.png
+P 3C493DD4 radiogroup.png
+P 5BA25C15 tab.png
+P A3D7A036 textarea.png
+P A3D7A036 textinput.png
+P 2DCE1DF9 vscroll$bar.png
+P 6FE7EA34 vscroll$down.png
+P 0587871F vscroll$up.png
+P 5FD17798 vscroll.png
+P DDDDFB9E vslider$bar.png
+P 01BAE7F5 vslider.png
+D prefab
+R 1C4A85E6 left_trunk.prefab
+R 0319FD0D right_trunk.prefab
+R E3B49AEF trunk.prefab
+D res
+D res/ironman_action
+P 5FA8B96D attack1.png
+P 0299E948 attack3.png
+P 5579D12F attack4.png
+D res/ironman_left_die
+P C25400D4 rip1.png
+P D94924E3 rip2.png
+P FB07BDD2 rip3.png
+P 1B3380C8 rip4.png
+P ABB66EE4 rip5.png
+P ECD64060 rip6.png
+D res/ironman_left_fly
+P 80810C1D fly1.png
+P 6A5E5B92 fly2.png
+D res/ironman_right_die
+P 5CC2C869 Rip1.png
+P 3B51BCE7 Rip2.png
+P 4463B74B Rip3.png
+P D1509893 Rip4.png
+P 0D9828C6 Rip5.png
+P 64DA87D7 Rip6.png
+D res/main
+R B20F0435 bg.png
+P AFF41D7B bg_msg.png
+R 7C33C238 bottomtree.png
+R 711C71F8 btn_ok.png
+P AAD3FE40 fontclip.png
+R DE6E02EA gameBg.png
+R DEAAA71B gameOverText.png
+P 68A7A945 left_branch.png
+P 7BEA2CD9 leftBtn.png
+P E10202E0 LEVEL.png
+P 909BCE57 normal.png
+P B1C082DC progress_time$bar.png
+P 8B4E3EC1 progress_time.png
+P C66D16C0 right_branch.png
+P 8C3D1055 rightBtn.png
+R EAAC291D time_bg.png

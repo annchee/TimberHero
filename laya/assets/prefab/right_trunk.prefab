@@ -1,0 +1,26 @@
+{
+    "x":0,
+    "type":"Sprite",
+    "selectedBox":136,
+    "searchKey":"Sprite,right_trunk",
+    "props":{"y":0,"x":0,"texture":"res/main/right_branch.png","presetID":1,"preset":"laya/assets/prefab/right_trunk.prefab","name":"right_trunk","isPresetRoot":true},
+    "nodeParent":-1,
+    "maxID":138,
+    "label":"right_trunk",
+    "isOpen":null,
+    "isDirectory":false,
+    "isAniNode":true,
+    "hasChild":false,
+    "compId":136,
+    "child":[
+        ],
+    "animations":[
+        {
+            "nodes":[
+                ],
+            "name":"ani1",
+            "id":1,
+            "frameRate":24,
+            "action":0
+        }]
+}
