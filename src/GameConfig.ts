@@ -7,7 +7,7 @@ export default class GameConfig{
     static width:number=1080;
     static height:number=1920;
     static scaleMode:string="showall";
-    static screenMode:string="horizontal";
+    static screenMode:string="none";
     static alignV:string="middle";
     static alignH:string="center";
     static startScene:any="MainGame.scene";
