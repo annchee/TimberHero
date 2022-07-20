@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":86,
-    "selecteID":87,
+    "selectedBox":2,
+    "selecteID":86,
     "searchKey":"Scene",
     "props":{"width":1080,"sceneColor":"#000000","height":1920},
     "nodeParent":-1,
@@ -269,20 +269,19 @@
             "props":{"y":0,"x":0,"skin":"res/main/gameBg.png","name":"game_bg"},
             "nodeParent":2,
             "label":"game_bg",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":86,
             "child":[
                 {
-                    "x":30,
                     "type":"Text",
                     "searchKey":"Text,start",
                     "props":{"y":930,"x":45,"wordWrap":false,"text":"PRESS ANYWHERE TO START","stroke":0,"padding":"10","name":"start","leading":15,"fontSize":68,"font":"Helvetica","color":"#000"},
                     "nodeParent":86,
                     "label":"start",
-                    "isOpen":null,
+                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -304,7 +303,7 @@
                                 ]
                         }]
                 }],
-            "$HIDDEN":false
+            "$HIDDEN":true
         },
         {
             "x":15,

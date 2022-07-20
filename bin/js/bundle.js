@@ -1,6 +1,46 @@
 (function () {
     'use strict';
 
+    class Loading extends Laya.Script {
+        constructor() {
+            super();
+            this.progressBar = null;
+        }
+        onStart() {
+            this.progressBarWidth = this.progressBar.width;
+            this.progressBar.width = 0;
+            var resourceArray = [
+                { url: "res/main/bg.png", type: Laya.Loader.IMAGE },
+                { url: "res/main/gameBg.png", type: Laya.Loader.IMAGE },
+                { url: "res/main/gameOverText.png", type: Laya.Loader.IMAGE },
+                { url: "res/main/bottomtree.png", type: Laya.Loader.IMAGE },
+                { url: "res/main/time_bg.png", type: Laya.Loader.IMAGE },
+                { url: "res/atlas/res/ironman_action.atlas", type: Laya.Loader.ATLAS },
+                { url: "res/atlas/res/ironman_left_fly.atlas", type: Laya.Loader.ATLAS },
+                { url: "res/atlas/res/ironman_left_fly.atlas", type: Laya.Loader.ATLAS },
+                { url: "res/atlas/res/ironman_right_die.atlas", type: Laya.Loader.ATLAS },
+                { url: "res/atlas/res/main.atlas", type: Laya.Loader.ATLAS },
+                { url: "res/sound/bg.mp3", type: Laya.Loader.SOUND },
+                { url: "res/sound/chopTree.mp3", type: Laya.Loader.SOUND },
+                { url: "res/sound/lose.mp3", type: Laya.Loader.SOUND }
+            ];
+            Laya.loader.load(resourceArray, Laya.Handler.create(this, this.onLoaded), Laya.Handler.create(this, this.onProgress, null, false));
+        }
+        onLoaded() {
+            this.progressBar.width = this.progressBarWidth;
+        }
+        onProgress(value) {
+            var percentProgressBar = this.progressBarWidth * value;
+            this.progressBar.width = percentProgressBar;
+            if (value == 1) {
+                Laya.Scene.open('MainGame.scene', true, 0, Laya.Handler.create(this, () => {
+                    Laya.Scene.destroy("Loading.scene");
+                }));
+                return;
+            }
+        }
+    }
+
     var keyBestScore = "keyBestScore";
     class GameManager extends Laya.Script {
         constructor() {
@@ -34,7 +74,6 @@
             this.progressTime = null;
             this.level = null;
             this.levelTxt = null;
-            this.loadImage();
             Laya.SoundManager.setMusicVolume(0.3);
             this.playMusic(this.currentMusic);
         }
@@ -50,27 +89,6 @@
                     return;
                 }
             }
-        }
-        loadImage() {
-            var resourceArray = [
-                { url: "res/main/bg.png", type: Laya.Loader.IMAGE },
-                { url: "res/main/gameBg.png", type: Laya.Loader.IMAGE },
-                { url: "res/main/gameOverText.png", type: Laya.Loader.IMAGE },
-                { url: "res/main/bottomtree.png", type: Laya.Loader.IMAGE },
-                { url: "res/main/time_bg.png", type: Laya.Loader.IMAGE },
-                { url: "res/atlas/res/ironman_action.atlas", type: Laya.Loader.ATLAS },
-                { url: "res/atlas/res/ironman_left_fly.atlas", type: Laya.Loader.ATLAS },
-                { url: "res/atlas/res/ironman_left_fly.atlas", type: Laya.Loader.ATLAS },
-                { url: "res/atlas/res/ironman_right_die.atlas", type: Laya.Loader.ATLAS },
-                { url: "res/atlas/res/main.atlas", type: Laya.Loader.ATLAS },
-                { url: "res/sound/bg.mp3", type: Laya.Loader.SOUND },
-                { url: "res/sound/chopTree.mp3", type: Laya.Loader.SOUND },
-                { url: "res/sound/lose.mp3", type: Laya.Loader.SOUND }
-            ];
-            Laya.loader.load(resourceArray, Laya.Handler.create(this, this.onLoad));
-        }
-        onLoad() {
-            Laya.timer.once(1000, this, this.onStart);
         }
         onAwake() {
             this.isPlaying = false;
@@ -448,16 +466,17 @@
         constructor() { }
         static init() {
             var reg = Laya.ClassUtils.regClass;
+            reg("Game/Loading.ts", Loading);
             reg("Game/GameManager.ts", GameManager);
         }
     }
     GameConfig.width = 1080;
     GameConfig.height = 1920;
     GameConfig.scaleMode = "showall";
-    GameConfig.screenMode = "horizontal";
+    GameConfig.screenMode = "none";
     GameConfig.alignV = "middle";
     GameConfig.alignH = "center";
-    GameConfig.startScene = "MainGame.scene";
+    GameConfig.startScene = "Loading.scene";
     GameConfig.sceneRoot = "";
     GameConfig.debug = false;
     GameConfig.stat = false;
